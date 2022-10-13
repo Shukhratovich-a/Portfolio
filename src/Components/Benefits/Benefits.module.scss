@@ -1,0 +1,72 @@
+@import "../../Scss/Variables.scss";
+
+.benefits__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 50px;
+}
+
+.benefit {
+  padding: 0 25px;
+  padding-bottom: 38px;
+  color: $textBlackLight;
+}
+
+.benefit__icon {
+  position: relative;
+  width: 116px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  color: $white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%) rotate(60deg);
+    z-index: -1;
+    display: block;
+    width: calc(100% / 2);
+    height: 100%;
+    background-color: $blue;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%) rotate(120deg);
+    z-index: -1;
+    display: block;
+    width: calc(100% / 2);
+    height: 100%;
+    background-color: $blue;
+  }
+}
+
+.benefit__icon__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 2);
+  height: 100%;
+  margin: 0 auto;
+  background-color: $blue;
+}
+
+.benefit__heading {
+  margin-bottom: 5px;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.benefit__description {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
