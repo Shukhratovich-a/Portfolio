@@ -1,8 +1,12 @@
 import React from "react";
 
+import Nav from "../../Components/Nav/Nav";
+
 import MyCanvas from "../Lib/Canvas/Canvas";
 
 import Arrow from "../Lib/Icons/Arrow";
+
+import { Link } from "react-scroll";
 
 import Container from "../Container/Container";
 
@@ -19,11 +23,12 @@ const Hero: React.FC = () => {
           <span>I'm a full-stack web developer.</span>
         </h1>
 
-        <button className={`${styles.hero__button}`}>
+        <Link className={`${styles.hero__button}`} to={"about"}>
           <span>View my work</span>
           <Arrow />
-        </button>
+        </Link>
       </Container>
+      <Nav />
     </section>
   );
 };

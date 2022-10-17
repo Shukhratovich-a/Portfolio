@@ -1,12 +1,21 @@
 @import "../../Scss/Variables.scss";
+@import "../../Scss/Animations.scss";
 
 .nav {
-  position: relative;
-  z-index: 2;
+  width: 100%;
   padding: 15px 0;
   color: $white;
   background-color: $bgColorDark;
   border-bottom: 3px solid $blue;
+
+  &--show {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    animation: popDown 0.75s ease both;
+  }
 }
 
 .nav__list {
@@ -23,6 +32,7 @@
 .nav__link {
   font-size: 16px;
   line-height: 20px;
+  text-transform: uppercase;
   cursor: pointer;
   transition: color 0.25s ease;
 

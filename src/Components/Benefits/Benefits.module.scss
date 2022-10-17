@@ -1,9 +1,22 @@
 @import "../../Scss/Variables.scss";
+@import "../../Scss/Animations.scss";
 
 .benefits__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 50px;
+
+  &--icon-show {
+    .benefit__icon {
+      animation-play-state: running;
+    }
+  }
+
+  &--desc-show {
+    .benefit__inner {
+      animation-play-state: running;
+    }
+  }
 }
 
 .benefit {
@@ -19,6 +32,9 @@
   margin: 0 auto;
   margin-bottom: 15px;
   color: $white;
+  animation: flipInX 0.75s ease both;
+  animation-play-state: paused;
+  animation-delay: inherit;
 
   &::after {
     content: "";
@@ -57,11 +73,18 @@
   background-color: $blue;
 }
 
+.benefit__inner {
+  opacity: 0;
+  animation: fadeIn 0.75s ease both;
+  animation-delay: inherit;
+  animation-play-state: paused;
+}
+
 .benefit__heading {
   margin-bottom: 5px;
   font-size: 24px;
   line-height: 24px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-align: center;
 }
 

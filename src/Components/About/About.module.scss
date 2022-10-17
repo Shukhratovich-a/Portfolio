@@ -1,25 +1,165 @@
 @import "../../Scss/Variables.scss";
+@import "../../Scss/Animations.scss";
 
 .about {
   padding-top: 120px;
+  padding-bottom: 130px;
+}
+
+.about__top {
+  margin-bottom: 100px;
 }
 
 .about__heading {
-  margin-bottom: 100px;
-  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
   font-weight: 700;
   font-size: 40px;
   line-height: 44px;
   text-transform: uppercase;
   color: $textBlack;
+  text-align: center;
+}
 
-  &::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 4px;
-    margin: 0 auto;
-    margin-top: 15px;
-    background-color: $textBlack;
+.about__heading__text {
+  display: inline-block;
+  opacity: 0;
+  text-align: center;
+  animation: slideInLeft 0.75s ease both;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
   }
+}
+
+.about__top__line {
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  background-color: $textBlack;
+  opacity: 0;
+  animation: slideInLeft 0.75s ease both;
+  animation-delay: 0.5s;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
+
+.about__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+    .about__item__fill {
+      span {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.about__info__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: calc(100% / 2);
+  width: 100%;
+  padding: 0 50px;
+  color: $textBlackLight;
+  text-align: center;
+  animation: slideInLeft 0.75s ease both;
+  animation-play-state: inherit;
+}
+
+.about__info__image {
+  margin-bottom: 20px;
+}
+
+.about__info__heading {
+  margin-bottom: 15px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.about__info__description {
+  max-width: 450px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.about__info__right {
+  max-width: calc(100% / 2);
+  width: 100%;
+  animation: slideInRight 0.75s ease both;
+  animation-play-state: inherit;
+}
+
+.about__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  background-color: $gray;
+
+  & + & {
+    margin-top: 15px;
+  }
+}
+
+.about__item__lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 110px;
+  height: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 700;
+  color: $white;
+  background-color: $blue;
+}
+
+.about__item__fill {
+  width: 100%;
+  height: 100%;
+
+  span {
+    display: inline-block;
+    width: 85%;
+    height: 100%;
+    // transition-delay: 1.1s;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0%;
+      height: 100%;
+      background-color: $blueDark;
+      transition: width ease-in-out;
+      transition-duration: 0.75s;
+      transition-delay: inherit;
+    }
+  }
+}
+
+.about__item__procent {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  padding-right: 15px;
+  font-size: 16px;
+  line-height: 24px;
+  color: $grayDark;
 }
