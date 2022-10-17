@@ -2,8 +2,6 @@ import React from "react";
 
 import skills from "../../Datas/Skills";
 
-import useWindowDimensions from "../../Hooks/useWindowDimesions";
-
 import Benefits from "../Benefits/Benefits";
 
 import Man from "../../Assets/Images/About/Man.png";
