@@ -163,3 +163,18 @@
   line-height: 24px;
   color: $grayDark;
 }
+
+@media only screen and (max-width: 1000px) {
+  .about__info {
+    flex-direction: column;
+  }
+
+  .about__info__left {
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .about__info__right {
+    max-width: 800px;
+  }
+}
