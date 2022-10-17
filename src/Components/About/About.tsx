@@ -78,6 +78,7 @@ const About: React.FC = () => {
                         style={{
                           width: skill.procent,
                           transitionDelay: String(0.75 + index / 10) + "s",
+                          transitionDuration: String(0.75 + index / 10) + "s",
                         }}
                       ></span>
                     </span>

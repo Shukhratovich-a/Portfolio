@@ -20,8 +20,20 @@ const skills: Skill[] = [
     procent: "50%",
   },
   {
+    title: "LESS",
+    procent: "90%",
+  },
+  {
     title: "SCSS",
     procent: "90%",
+  },
+  {
+    title: "SCSS",
+    procent: "90%",
+  },
+  {
+    title: "SCSS",
+    procent: "50%",
   },
 ];
 
