@@ -1,7 +1,7 @@
 import React from "react";
 
 import Hero from "./Components/Hero/Hero";
-// import About from "./Components/About/About";
+import About from "./Components/About/About";
 
 import "./App.scss";
 
@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <div className="app">
       <main>
         <Hero />
-        {/* <About /> */}
+        <About />
       </main>
     </div>
   );
