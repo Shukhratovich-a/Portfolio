@@ -7,22 +7,22 @@ const benefits: Benefit[] = [
   {
     image: Fast,
     heading: "Fast",
-    description: "Fast load times and lag free interaction, my highest priority.",
+    describtion: "Fast load times and lag free interaction, my highest priority.",
   },
   {
     image: Responsive,
     heading: "Responsive",
-    description: "My layouts will work on any device, big or small.",
+    describtion: "My layouts will work on any device, big or small.",
   },
   {
     image: Intuitive,
     heading: "Intuitive",
-    description: "Strong preference for easy to use, intuitive UX/UI.",
+    describtion: "Strong preference for easy to use, intuitive UX/UI.",
   },
   {
     image: Dynamic,
     heading: "Dynamic",
-    description: "Websites don't have to be static, I love making pages come to life.",
+    describtion: "Websites don't have to be static, I love making pages come to life.",
   },
 ];
 

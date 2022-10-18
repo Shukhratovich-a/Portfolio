@@ -1,10 +1,10 @@
 import React from "react";
+import parser from "html-react-parser";
 
 import skills from "../../Datas/Skills";
+import about from "../../Datas/About";
 
 import Benefits from "../Benefits/Benefits";
-
-import Man from "../../Assets/Images/About/Man.png";
 
 import Container from "../Container/Container";
 
@@ -48,23 +48,15 @@ const About: React.FC = () => {
           <div className={`${styles.about__info__left}`}>
             <img
               className={`${styles.about__info__image}`}
-              src={Man}
+              src={about.image}
               alt="I'm a Front-End Developer for ChowNow in Los Angeles, CA. I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences. Let's make something special."
               width={290}
               height={250}
             />
 
-            <h3 className={`${styles.about__info__heading}`}>Who's this guy?</h3>
+            <h3 className={`${styles.about__info__heading}`}>{about.title}</h3>
 
-            <p className={`${styles.about__info__description}`}>
-              I'm a Front-End Developer for ChowNow in Los Angeles, CA.
-              <br />
-              I have serious passion for UI effects, animations and creating
-              <br />
-              intuitive, dynamic user experiences.
-              <br />
-              Let's make something special.
-            </p>
+            <p className={`${styles.about__info__description}`}>{parser(about.describtion)}</p>
           </div>
 
           <div className={`${styles.about__info__right}`}>

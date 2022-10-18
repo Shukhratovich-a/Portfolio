@@ -1,4 +1,7 @@
 import React from "react";
+import parser from "html-react-parser";
+
+import hero from "../../Datas/Hero";
 
 import Nav from "../../Components/Nav/Nav";
 
@@ -17,14 +20,10 @@ const Hero: React.FC = () => {
     <section className={`${styles.hero}`} id={"hero"}>
       <MyCanvas />
       <Container className={`${styles.container}`}>
-        <h1 className={`${styles.hero__heading}`}>
-          <span>Hello, I'm</span> <strong>Abdulaziz Abdunabiyev</strong>.
-          <br />
-          <span>I'm a full-stack web developer.</span>
-        </h1>
+        <h1 className={`${styles.hero__heading}`}>{parser(hero.describtion)}</h1>
 
         <Link className={`${styles.hero__button}`} to={"about"}>
-          <span>View my work</span>
+          <span>{hero.button}</span>
           <Arrow />
         </Link>
       </Container>

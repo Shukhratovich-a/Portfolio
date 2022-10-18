@@ -34,7 +34,7 @@ const Benefits: React.FC = () => {
             <div className={`${styles.benefit__inner}`}>
               <h2 className={`${styles.benefit__heading}`}>{benefit.heading}</h2>
 
-              <p className={`${styles.benefit__description}`}>{benefit.description}</p>
+              <p className={`${styles.benefit__description}`}>{benefit.describtion}</p>
             </div>
           </li>
         ))}
