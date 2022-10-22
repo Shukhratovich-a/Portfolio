@@ -1,10 +1,14 @@
 import React from "react";
 
+import Filter from "../Filter/Filter";
+
 import Container from "../Container/Container";
 
 import styles from "./Projects.module.scss";
 
 const Projects: React.FC = () => {
+  const [activeLang, setActiveLang]: [string, (state: string) => void] = React.useState("all");
+
   const headingTextRef = React.useRef<HTMLHeadingElement>(null);
   const headingLineRef = React.useRef<HTMLSpanElement>(null);
 
@@ -31,6 +35,8 @@ const Projects: React.FC = () => {
 
           <span className={`${styles.projects__top__line}`} ref={headingLineRef}></span>
         </div>
+
+        <Filter activeLang={activeLang} setActiveLang={setActiveLang} />
       </Container>
     </section>
   );
