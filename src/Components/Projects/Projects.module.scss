@@ -1,0 +1,51 @@
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Animations.scss";
+
+.projects {
+  padding-top: 120px;
+  padding-bottom: 130px;
+  background-color: $bgColorGray;
+}
+
+.projects__top {
+  margin-bottom: 100px;
+}
+
+.projects__heading {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: $textBlack;
+  text-align: center;
+}
+
+.projects__heading__text {
+  display: inline-block;
+  opacity: 0;
+  text-align: center;
+  animation: slideInRight 0.75s ease both;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
+
+.projects__top__line {
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  background-color: $textBlack;
+  opacity: 0;
+  animation: slideInRight 0.75s ease both;
+  animation-delay: 0.3s;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
