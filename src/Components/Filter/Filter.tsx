@@ -9,9 +9,16 @@ import styles from "./Filter.module.scss";
 interface FilterItem {
   activeLang: string;
   setActiveLang: (state: string) => void;
+  allProjects: Project[];
+  setFilteredProjects: (state: Project[]) => void;
 }
 
-const Filter: React.FC<FilterItem> = ({ setActiveLang, activeLang }) => {
+const Filter: React.FC<FilterItem> = ({
+  setActiveLang,
+  activeLang,
+  allProjects,
+  setFilteredProjects,
+}) => {
   const { width } = useWindowDimensions();
 
   const [floatInnerLeft, setFloatInnerLeft] = React.useState(-25);
@@ -47,6 +54,15 @@ const Filter: React.FC<FilterItem> = ({ setActiveLang, activeLang }) => {
     });
   }, [activeLang, width]);
 
+  React.useEffect(() => {
+    if (activeLang === "all") {
+      setFilteredProjects(allProjects);
+      return;
+    }
+    const filtered = allProjects.filter((project) => project.lang === activeLang);
+    setFilteredProjects(filtered);
+  }, [activeLang, allProjects, setFilteredProjects]);
+
   return (
     <div className={`${styles.filter}`} ref={filterRef}>
       <ul className={`${styles.filter__list}`} ref={filterListRef}>
@@ -62,9 +78,7 @@ const Filter: React.FC<FilterItem> = ({ setActiveLang, activeLang }) => {
                 className={`${styles.filter__button}`}
                 name={item.short}
                 type={"button"}
-                onClick={(evt) => {
-                  setActiveLang(evt.currentTarget.name);
-                }}
+                onClick={(evt) => setActiveLang(evt.currentTarget.name)}
               >
                 <span className={`${styles.filter__button__text}`}>{item.title}</span>
               </button>

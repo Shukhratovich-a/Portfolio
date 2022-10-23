@@ -7,10 +7,10 @@ const filter: Filter[] = [
     title: "node.js",
     short: "node",
   },
-  {
-    title: "ruby/rails",
-    short: "ruby",
-  },
+  // {
+  //   title: "ruby/rails",
+  //   short: "ruby",
+  // },
   {
     title: "javascript",
     short: "javascript",
