@@ -1,0 +1,134 @@
+@import "../../../Scss/Variables.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  &--open {
+    pointer-events: all;
+
+    .modal__back {
+      opacity: 1;
+    }
+
+    .modal__inner {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.modal__back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: $black, $alpha: 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal__inner {
+  position: relative;
+  transform: scale(0.8);
+  z-index: 1;
+  width: 700px;
+  background: #fff;
+  box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal__gallery {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.modal__gallery__slider {
+  width: 100%;
+  height: 100%;
+}
+
+.modal__gallery__slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.modal__gallery__navigation {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__gallery__button {
+  padding: 10px 15px;
+  color: $white;
+  border: none;
+  background-color: rgba($color: $black, $alpha: 0.3);
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.modal__info {
+  padding-top: 35px;
+  padding-right: 60px;
+  padding-bottom: 90px;
+  padding-left: 25px;
+  color: $blackLight;
+  border-top: 3px solid $bgColorDark;
+}
+
+.modal__info__top {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+}
+
+.modal__info__title {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.modal__info__tag {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.modal__info__description {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.modal__button {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: inline-block;
+  padding: 0;
+  color: $grayLight;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

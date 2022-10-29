@@ -9,10 +9,16 @@ const Benefits: React.FC = () => {
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (benefitsRef.current!.offsetTop < window.scrollY + window.innerHeight - 180) {
+      if (
+        benefitsRef.current &&
+        benefitsRef.current!.offsetTop < window.scrollY + window.innerHeight - 180
+      ) {
         benefitsRef.current?.classList.add(styles["benefits__list--icon-show"]);
       }
-      if (benefitsRef.current!.offsetTop < window.scrollY + window.innerHeight - 250) {
+      if (
+        benefitsRef.current &&
+        benefitsRef.current!.offsetTop < window.scrollY + window.innerHeight - 250
+      ) {
         benefitsRef.current?.classList.add(styles["benefits__list--desc-show"]);
       }
     });

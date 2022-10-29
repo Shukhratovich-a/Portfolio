@@ -31,27 +31,34 @@ const Filter: React.FC<FilterItem> = ({
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (filterRef.current!.offsetTop < window.scrollY + window.innerHeight - 60) {
+      if (
+        filterRef.current &&
+        filterRef.current!.offsetTop < window.scrollY + window.innerHeight - 60
+      ) {
         filterRef.current?.classList.add(styles["filter--show"]);
       }
     });
   }, []);
 
   React.useEffect(() => {
-    floatRef.current?.childNodes[0].childNodes.forEach((item: any) => {
-      const button: HTMLButtonElement = item.childNodes[0];
-      if (item.childNodes[0]?.name === activeLang) {
-        setFloatInnerLeft(-button.offsetLeft);
-        setFloatWidth(button.offsetWidth);
-      }
-    });
+    if (floatRef.current) {
+      floatRef.current?.childNodes[0].childNodes.forEach((item: any) => {
+        const button: HTMLButtonElement = item.childNodes[0];
+        if (item.childNodes[0]?.name === activeLang) {
+          setFloatInnerLeft(-button.offsetLeft);
+          setFloatWidth(button.offsetWidth);
+        }
+      });
+    }
 
-    filterListRef.current?.childNodes.forEach((item: any) => {
-      const button: HTMLButtonElement = item.childNodes[0];
-      if (item.childNodes[0]?.name === activeLang) {
-        setFloatLeft(button.offsetLeft);
-      }
-    });
+    if (filterListRef.current) {
+      filterListRef.current?.childNodes.forEach((item: any) => {
+        const button: HTMLButtonElement = item.childNodes[0];
+        if (item.childNodes[0]?.name === activeLang) {
+          setFloatLeft(button.offsetLeft);
+        }
+      });
+    }
   }, [activeLang, width]);
 
   React.useEffect(() => {

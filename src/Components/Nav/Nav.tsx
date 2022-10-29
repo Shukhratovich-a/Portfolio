@@ -13,6 +13,7 @@ const Nav: React.FC = () => {
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
+        navRef.current &&
         2 * window.innerHeight - 3 <=
           window.scrollY + window.innerHeight - navRef.current!.offsetHeight &&
         !isSticky

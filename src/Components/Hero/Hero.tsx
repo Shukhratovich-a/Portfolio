@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import parser from "html-react-parser";
 
 import hero from "../../Datas/Hero";
@@ -6,11 +7,7 @@ import hero from "../../Datas/Hero";
 import Nav from "../../Components/Nav/Nav";
 
 import MyCanvas from "../Lib/Canvas/Canvas";
-
 import Arrow from "../Lib/Icons/Arrow";
-
-import { Link } from "react-scroll";
-
 import Container from "../Container/Container";
 
 import styles from "./Hero.module.scss";

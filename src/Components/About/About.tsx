@@ -17,13 +17,22 @@ const About: React.FC = () => {
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (headingTextRef.current!.offsetTop < window.scrollY + window.innerHeight - 150) {
+      if (
+        headingTextRef.current &&
+        headingTextRef.current!.offsetTop < window.scrollY + window.innerHeight - 150
+      ) {
         headingTextRef.current?.classList.add(styles["about__heading__text--show"]);
       }
-      if (headingLineRef.current!.offsetTop < window.scrollY + window.innerHeight - 100) {
+      if (
+        headingLineRef.current &&
+        headingLineRef.current!.offsetTop < window.scrollY + window.innerHeight - 100
+      ) {
         headingLineRef.current?.classList.add(styles["about__top__line--show"]);
       }
-      if (aboutInfoRef.current!.offsetTop < window.scrollY + window.innerHeight - 170) {
+      if (
+        aboutInfoRef.current &&
+        aboutInfoRef.current!.offsetTop < window.scrollY + window.innerHeight - 170
+      ) {
         aboutInfoRef.current?.classList.add(styles["about__info--show"]);
       }
     });
