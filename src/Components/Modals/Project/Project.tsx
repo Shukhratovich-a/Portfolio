@@ -7,6 +7,7 @@ import useProjectModal from "../../../Hooks/useProjectModal";
 
 import Chevron from "../../Lib/Icons/Chevron";
 import Close from "../../Lib/Icons/Close";
+import Link from "../../Lib/Icons/Link";
 
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -71,6 +72,16 @@ const Project: React.FC = () => {
         <button className={`${styles.modal__button}`} onClick={() => setProjectModal(false)}>
           <Close />
         </button>
+
+        <a
+          className={`${styles.modal__link}`}
+          href={projectInfo.link}
+          target={"_blank"}
+          rel="noreferrer noopener"
+        >
+          <Link />
+          <span>view site</span>
+        </a>
       </div>
     </div>
   );

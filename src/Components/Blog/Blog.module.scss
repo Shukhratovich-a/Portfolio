@@ -1,0 +1,50 @@
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Animations.scss";
+
+.blog {
+  padding-top: 150px;
+  padding-bottom: 180px;
+}
+
+.blog__top {
+  margin-bottom: 100px;
+}
+
+.blog__heading {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: $textBlack;
+  text-align: center;
+}
+
+.blog__heading__text {
+  display: inline-block;
+  opacity: 0;
+  text-align: center;
+  animation: slideInLeft 0.75s ease both;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
+
+.blog__top__line {
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  background-color: $textBlack;
+  opacity: 0;
+  animation: slideInLeft 0.75s ease both;
+  animation-delay: 0.5s;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
