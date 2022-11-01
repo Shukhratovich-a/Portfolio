@@ -1,6 +1,7 @@
 @import "../../Scss/Variables.scss";
 
 .hero {
+  position: relative;
   height: calc(100vh + 53px);
   background-color: $bgColor;
   color: $white;

@@ -1,0 +1,137 @@
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Animations.scss";
+
+.contact {
+  padding-bottom: 130px;
+  margin-bottom: -1px;
+  background-color: $bgColor;
+  border-bottom: 1px solid $bgColor;
+}
+
+.contact__triangle {
+  position: relative;
+  top: -1px;
+  right: 0;
+  left: 0;
+  color: $white;
+}
+
+.container {
+  padding-top: 120px;
+}
+
+.contact__top {
+  margin-bottom: 40px;
+}
+
+.contact__heading {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: $white;
+  text-align: center;
+}
+
+.contact__heading__text {
+  display: inline-block;
+  opacity: 0;
+  text-align: center;
+  animation: slideInLeft 0.75s ease both;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
+
+.contact__top__line {
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-color: $white;
+  opacity: 0;
+  animation: slideInRight 0.75s ease both;
+  animation-delay: 0.25s;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
+
+.contact__top__highlight {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $blue;
+  text-align: center;
+  animation: slideInRight 0.75s ease both;
+  animation-delay: 0.5s;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
+
+.contact__form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  animation: popIn 1s ease both;
+  animation-delay: 0.5s;
+  animation-play-state: paused;
+
+  &--show {
+    animation-play-state: running;
+  }
+}
+
+.contact__form__input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 18px;
+  color: $white;
+  border: none;
+  outline: none;
+  background-color: $bgColorDark;
+
+  &[name="message"] {
+    resize: none;
+    height: 150px;
+    margin-bottom: 5px;
+  }
+
+  & + & {
+    margin-top: 3px;
+  }
+}
+
+.contact__from__button {
+  display: block;
+  padding: 10px 30px;
+  margin-left: auto;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  color: $white;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    background-color: $blue;
+    border-color: $blue;
+  }
+}

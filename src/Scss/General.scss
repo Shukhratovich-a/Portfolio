@@ -53,6 +53,7 @@ body {
 }
 
 .app {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -60,6 +61,10 @@ body {
 
 main {
   flex-grow: 1;
+}
+
+section {
+  overflow-x: hidden;
 }
 
 img,
@@ -85,4 +90,8 @@ ol {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+button {
+  outline: none;
 }

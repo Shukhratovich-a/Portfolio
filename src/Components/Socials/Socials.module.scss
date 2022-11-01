@@ -1,0 +1,37 @@
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Animations.scss";
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.social {
+  & + & {
+    margin-left: 30px;
+  }
+}
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: $white;
+  background-color: $bgColorLight;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(0.9);
+    background-color: $blue;
+    box-shadow: 0 0 0 3px rgb(4 94 201 / 10%);
+
+    svg {
+      animation: toBottomFromTop 0.3s forwards;
+    }
+  }
+}

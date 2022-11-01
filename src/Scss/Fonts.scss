@@ -1,3 +1,4 @@
+// Raleway
 /* raleway-300 */
 @font-face {
   font-family: "Raleway";
@@ -59,4 +60,14 @@
   font-weight: 800;
   src: url("../Assets/Fonts/Raleway/Raleway-800.woff2") format("woff2"),
     url("../Assets/Fonts/Raleway/Raleway-800.woff") format("woff");
+}
+
+// OpenSans
+/* opensans-400 */
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../Assets/Fonts/OpenSans/OpenSans-400.woff2") format("woff2"),
+    url("../Assets/Fonts/OpenSans/OpenSans-400.woff") format("woff");
 }

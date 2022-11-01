@@ -6,12 +6,15 @@ import useProjectModal from "../../../Hooks/useProjectModal";
 
 import styles from "./Project.module.scss";
 
-const Card: React.FC<{
-  className: string;
-  project: Project;
-  projectsShow: boolean;
-  order: number;
-}> = ({ className, project, projectsShow, order }) => {
+const Card = React.forwardRef<
+  HTMLLIElement,
+  {
+    className: string;
+    project: Project;
+    projectsShow: boolean;
+    order: number;
+  }
+>(({ className, project, projectsShow, order }, ref) => {
   const [delay, setDelay] = React.useState<number>(projectsShow ? 0 : 0.2 * order);
   const [, setProjectName] = useProjectName();
   const [, setProjectModal] = useProjectModal();
@@ -44,11 +47,15 @@ const Card: React.FC<{
         ease: "easeInOut",
       }}
       variants={variants}
+      ref={ref}
     >
-      <div
+      <img
         className={`${styles.card__banner}`}
-        style={{ backgroundImage: `url(${project.image})` }}
-      ></div>
+        src={project.image}
+        alt={project.title}
+        width={390}
+        height={300}
+      />
 
       <div className={`${styles.card__text}`}>
         <h3 className={`${styles.card__heading}`}>{project.title}</h3>
@@ -67,6 +74,6 @@ const Card: React.FC<{
       </button>
     </motion.li>
   );
-};
+});
 
 export default Card;

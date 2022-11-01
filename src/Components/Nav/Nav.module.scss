@@ -2,6 +2,8 @@
 @import "../../Scss/Animations.scss";
 
 .nav {
+  position: relative;
+  z-index: 99;
   width: 100%;
   padding: 15px 0;
   color: $white;
@@ -13,7 +15,6 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 99;
     animation: popDown 0.75s ease both;
   }
 }

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import projects from "../../Datas/Projects";
 
+import useWindowDimensions from "../../Hooks/useWindowDimesions";
+
 import Filter from "../Filter/Filter";
 import ProjectCard from "../Cards/Project/Project";
 import ProjectModal from "../Modals/Project/Project";
@@ -18,11 +20,13 @@ const Projects: React.FC = () => {
   const [projectsShow, setProjectsShow]: [boolean, (state: boolean) => void] =
     React.useState(false);
   const [height, setHeight]: [number, (state: number) => void] = React.useState(463);
+  const { width } = useWindowDimensions();
 
   const projectsRef = React.useRef<HTMLDivElement>(null);
   const headingTextRef = React.useRef<HTMLHeadingElement>(null);
   const headingLineRef = React.useRef<HTMLSpanElement>(null);
   const projectsListRef = React.useRef<HTMLUListElement>(null);
+  const projectCardRef = React.useRef<HTMLLIElement>(null);
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -49,10 +53,14 @@ const Projects: React.FC = () => {
   }, []);
 
   React.useEffect(() => {
-    if (projectsRef.current && projectsListRef.current && projectsShow) {
-      setHeight(463 + Math.ceil(filteredProjects.length / 3) * 300);
+    if (projectsRef.current && projectCardRef.current && projectsListRef.current && projectsShow) {
+      setHeight(
+        463 +
+          Math.ceil(filteredProjects.length / (width >= 1210 ? 3 : width >= 820 ? 2 : 1)) *
+            projectCardRef.current.offsetHeight
+      );
     }
-  }, [filteredProjects, projectsShow]);
+  }, [filteredProjects, projectsShow, width]);
 
   return (
     <motion.section
@@ -94,6 +102,7 @@ const Projects: React.FC = () => {
                   projectsShow={projectsShow}
                   key={project.id}
                   order={index}
+                  ref={projectCardRef}
                 />
               ))}
           </AnimatePresence>

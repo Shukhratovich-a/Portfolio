@@ -10,7 +10,6 @@ import Close from "../../Lib/Icons/Close";
 import Link from "../../Lib/Icons/Link";
 
 import "swiper/scss";
-import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 import styles from "./Project.module.scss";
 
@@ -22,6 +21,16 @@ const Project: React.FC = () => {
 
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (projectModal) {
+      window.onkeydown = (evt) => {
+        if (evt.keyCode === 27) {
+          setProjectModal(false);
+        }
+      };
+    }
+  }, [projectModal, setProjectModal]);
 
   return (
     <div className={`${styles.modal} ${projectModal ? styles["modal--open"] : ""}`}>
