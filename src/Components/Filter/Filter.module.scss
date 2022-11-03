@@ -22,7 +22,9 @@
 }
 
 .filter__item {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter__button {
@@ -66,5 +68,20 @@
   .filter__button {
     color: $white;
     pointer-events: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .filter__button {
+    margin: 0;
+    padding: 0 20px;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .filter__float {
+    width: 54px;
+    height: 20px;
   }
 }
