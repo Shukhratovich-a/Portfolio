@@ -1,5 +1,5 @@
-import image1 from "../Assets/Images/Projects/thumb-1.jpg";
-import image2 from "../Assets/Images/Projects/thumb-2.jpg";
+import Sano from "../Assets/Images/Projects/Sano/Sano-card.jpg";
+import Onur from "../Assets/Images/Projects/Onur/Onur-card.jpg";
 // import image3 from "../Assets/Images/Projects/thumb-3.jpg";
 // import image4 from "../Assets/Images/Projects/thumb-4.jpg";
 // import image5 from "../Assets/Images/Projects/thumb-5.jpg";
@@ -8,14 +8,14 @@ import image2 from "../Assets/Images/Projects/thumb-2.jpg";
 const projects: Project[] = [
   {
     id: 1,
-    image: image1,
+    image: Sano,
     lang: "javascript",
     title: "Sano",
     text: "Node + React.js",
   },
   {
     id: 2,
-    image: image2,
+    image: Onur,
     lang: "node",
     title: "Onur",
     text: "Node + React.js",

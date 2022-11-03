@@ -44,7 +44,8 @@
   transform: scale(0.8);
   z-index: 1;
   width: 700px;
-  background: #fff;
+  height: 740px;
+  background-color: $white;
   box-shadow: 0 0 10px rgb(0 0 0 / 40%);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -52,8 +53,6 @@
 
 .modal__gallery {
   position: relative;
-  width: 100%;
-  height: 450px;
   background-color: $red;
 }
 
@@ -65,6 +64,14 @@
 .modal__gallery__slide {
   background-size: cover;
   background-position: center;
+}
+
+.modal__image {
+  width: 100%;
+  max-height: 450px;
+  height: auto;
+  pointer-events: none;
+  object-fit: cover;
 }
 
 .modal__gallery__navigation {
@@ -111,7 +118,7 @@
 }
 
 .modal__info__tag {
-  display: inline-block;
+  display: block;
   font-size: 15px;
   line-height: 18px;
   text-transform: uppercase;
@@ -126,7 +133,7 @@
   position: absolute;
   right: 25px;
   bottom: 25px;
-  display: inline-block;
+  display: block;
   padding: 0;
   color: $grayLight;
   border: none;
@@ -152,5 +159,12 @@
 
   svg {
     margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .modal__inner {
+    width: 100%;
+    height: 100%;
   }
 }

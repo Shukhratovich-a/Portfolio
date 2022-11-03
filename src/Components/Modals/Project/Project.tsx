@@ -49,13 +49,18 @@ const Project: React.FC = () => {
             }}
             modules={[Navigation]}
           >
-            {projectInfo.images.length > 0 &&
+            {projectInfo &&
+              projectInfo.images.length > 0 &&
               projectInfo.images.map((image, index) => (
-                <SwiperSlide
-                  className={`${styles.modal__gallery__slide}`}
-                  style={{ backgroundImage: `url(${image})` }}
-                  key={index}
-                />
+                <SwiperSlide className={`${styles.modal__gallery__slide}`} key={index}>
+                  <img
+                    className={`${styles.modal__image}`}
+                    src={image}
+                    alt={projectInfo.title}
+                    width={700}
+                    height={450}
+                  />
+                </SwiperSlide>
               ))}
           </Swiper>
 

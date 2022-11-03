@@ -1,8 +1,9 @@
 import projectsInfo from "../Datas/ProjectInfos";
-import useProjectModal from "./useProjectName";
+
+import useProjectName from "./useProjectName";
 
 const useProjectInfo = (): ProjectInfo => {
-  const [projectName] = useProjectModal();
+  const [projectName] = useProjectName();
 
   return projectsInfo[projectName];
 };
