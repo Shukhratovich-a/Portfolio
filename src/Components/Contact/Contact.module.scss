@@ -13,7 +13,7 @@
   top: -1px;
   right: 0;
   left: 0;
-  color: $white;
+  color: $bgColorGray;
 }
 
 .container {
@@ -133,5 +133,30 @@
   &:hover {
     background-color: $blue;
     border-color: $blue;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    padding-bottom: 70px;
+  }
+
+  .container {
+    padding-top: 90px;
+  }
+
+  .contact__top {
+    margin-bottom: 40px;
+  }
+
+  .contact__heading {
+    margin-bottom: 15px;
+    font-size: 34px;
+    line-height: 34px;
+  }
+
+  .contact__top__highlight {
+    font-size: 12px;
+    line-height: 16px;
   }
 }

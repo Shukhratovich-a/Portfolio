@@ -92,6 +92,11 @@
   cursor: pointer;
   transition: opacity 0.25s ease;
 
+  svg {
+    width: 34px;
+    height: 34px;
+  }
+
   &:disabled {
     opacity: 0.5;
   }
@@ -120,7 +125,9 @@
 .modal__info__tag {
   display: block;
   font-size: 15px;
+  font-weight: 600;
   line-height: 18px;
+  color: $tagColor;
   text-transform: uppercase;
 }
 
@@ -166,5 +173,47 @@
   .modal__inner {
     width: 100%;
     height: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .modal__info {
+    padding-top: 15px;
+    padding-right: 25px;
+    padding-bottom: 85px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .modal__info {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .modal__info__top {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .modal__info__title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .modal__info__tag {
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  .modal__info__description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .modal__gallery__button {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }

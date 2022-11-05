@@ -71,6 +71,11 @@
   height: 100%;
   margin: 0 auto;
   background-color: $blue;
+
+  svg {
+    width: 55px;
+    height: 55px;
+  }
 }
 
 .benefit__inner {
@@ -117,5 +122,46 @@
   .benefit__description {
     max-width: 250px;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .benefit__icon {
+    width: 92px;
+    height: 80px;
+    margin-bottom: 20px;
+
+    &::after {
+      width: calc(100% / 2);
+    }
+
+    &::before {
+      width: calc(100% / 2);
+    }
+  }
+
+  .benefit__heading {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 16px;
+  }
+
+  .benefit__description {
+    width: 100%;
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .benefits__list {
+    margin-bottom: 30px;
+  }
+
+  .benefit__icon__inner {
+    svg {
+      width: 48px;
+      height: 48px;
+    }
   }
 }

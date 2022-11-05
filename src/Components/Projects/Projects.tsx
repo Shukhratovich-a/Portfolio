@@ -19,8 +19,10 @@ const Projects: React.FC = () => {
     React.useState([...projects]);
   const [projectsShow, setProjectsShow]: [boolean, (state: boolean) => void] =
     React.useState(false);
-  const [height, setHeight]: [number, (state: number) => void] = React.useState(463);
   const { width } = useWindowDimensions();
+  const [height, setHeight]: [number, (state: number) => void] = React.useState(
+    width > 600 ? 463 : 308
+  );
 
   const projectsRef = React.useRef<HTMLDivElement>(null);
   const headingTextRef = React.useRef<HTMLHeadingElement>(null);
@@ -55,7 +57,7 @@ const Projects: React.FC = () => {
   React.useEffect(() => {
     if (projectsRef.current && projectCardRef.current && projectsListRef.current && projectsShow) {
       setHeight(
-        463 +
+        (width >= 600 ? 463 : 308) +
           Math.ceil(filteredProjects.length / (width >= 1210 ? 3 : width >= 820 ? 2 : 1)) *
             projectCardRef.current.offsetHeight
       );

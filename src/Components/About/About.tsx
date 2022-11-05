@@ -14,6 +14,7 @@ const About: React.FC = () => {
   const headingTextRef = React.useRef<HTMLHeadingElement>(null);
   const headingLineRef = React.useRef<HTMLSpanElement>(null);
   const aboutInfoRef = React.useRef<HTMLDivElement>(null);
+  const aboutScillsRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -31,9 +32,15 @@ const About: React.FC = () => {
       }
       if (
         aboutInfoRef.current &&
-        aboutInfoRef.current!.offsetTop < window.scrollY + window.innerHeight - 170
+        aboutInfoRef.current!.offsetTop < window.scrollY + window.innerHeight - 200
       ) {
-        aboutInfoRef.current?.classList.add(styles["about__info--show"]);
+        aboutInfoRef.current?.classList.add(styles["about__info__left--show"]);
+      }
+      if (
+        aboutScillsRef.current &&
+        aboutScillsRef.current!.offsetTop < window.scrollY + window.innerHeight - 200
+      ) {
+        aboutScillsRef.current?.classList.add(styles["about__info__right--show"]);
       }
     });
   }, []);
@@ -53,8 +60,8 @@ const About: React.FC = () => {
 
         <Benefits />
 
-        <div className={`${styles.about__info}`} ref={aboutInfoRef}>
-          <div className={`${styles.about__info__left}`}>
+        <div className={`${styles.about__info}`}>
+          <div className={`${styles.about__info__left}`} ref={aboutInfoRef}>
             <img
               className={`${styles.about__info__image}`}
               src={about.image}
@@ -68,7 +75,7 @@ const About: React.FC = () => {
             <p className={`${styles.about__info__description}`}>{parser(about.describtion)}</p>
           </div>
 
-          <div className={`${styles.about__info__right}`}>
+          <div className={`${styles.about__info__right}`} ref={aboutScillsRef}>
             <ul className={`${styles.about__list}`}>
               {skills.length > 0 &&
                 skills.map((skill, index) => (

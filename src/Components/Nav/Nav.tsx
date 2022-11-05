@@ -63,7 +63,7 @@ const Nav: React.FC = () => {
             </Link>
           </li>
 
-          <li className={`${styles.nav__item}`}>
+          {/* <li className={`${styles.nav__item}`}>
             <Link
               className={`${styles.nav__link}`}
               activeClass={`${styles["nav__link--active"]}`}
@@ -72,7 +72,7 @@ const Nav: React.FC = () => {
             >
               Blog
             </Link>
-          </li>
+          </li> */}
 
           <li className={`${styles.nav__item}`}>
             <Link

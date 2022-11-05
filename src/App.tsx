@@ -3,7 +3,7 @@ import React from "react";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
 import Projects from "./Components/Projects/Projects";
-import Blog from "./Components/Blog/Blog";
+// import Blog from "./Components/Blog/Blog";
 import Contact from "./Components/Contact/Contact";
 
 import Footer from "./Components/Footer/Footer";
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <Hero />
         <About />
         <Projects />
-        <Blog />
+        {/* <Blog /> */}
         <Contact />
       </main>
 

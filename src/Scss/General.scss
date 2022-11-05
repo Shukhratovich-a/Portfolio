@@ -11,6 +11,7 @@ html {
 *::after {
   box-sizing: inherit;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .visually-hidden {
